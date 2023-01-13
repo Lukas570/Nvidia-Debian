@@ -2,7 +2,7 @@
 Fetches the current Version of the Nvidia-Driver (for Debian) and downloads it
 
 # Why?
-This is for everyone owning an Nvidia-Graphics card and is using Debian or any other OS based on Debian.
+This is for everyone owning an Nvidia-Graphics card and is using Debian or any other OS based on Debian. And want to install the most current Nvidia-Driver. It is a relief for everyone who installed an Nvidia-Driver manually before and had to set up everything by himself.
 
 # How?
 Download the scripts and make them executable:
