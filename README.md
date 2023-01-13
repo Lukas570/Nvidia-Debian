@@ -6,8 +6,11 @@ This is for everyone owning an Nvidia-Graphics card and is using Debian or any o
 
 # How?
 Download the scripts and make them executable:
+
 cd Nvidia-Debian
+
 chmod +x *
+
 # Downloading The Driver
 
 ./Download_Nvidia
