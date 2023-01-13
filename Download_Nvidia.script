@@ -1,0 +1,29 @@
+#!/bin/bash
+
+appdir=`echo "${0%/*}"`
+
+curdir=$PWD
+
+cd $HOME
+
+sudo apt install gcc make pkg-config libglvnd-dev curl
+
+VERSION=`curl https://raw.githubusercontent.com/aaronp24/nvidia-versions/master/nvidia-versions.txt |grep long-lived |sed 's/.*release//g;s/ //g'`
+
+DOWNLOAD="https://us.download.nvidia.com/XFree86/Linux-x86_64/$VERSION/NVIDIA-Linux-x86_64-$VERSION.run"
+
+wget $DOWNLOAD
+
+chmod +x $HOME/NVIDIA-Linux-x86_64-$VERSION.run
+
+cd $curdir
+
+datei="$appdir/Nvidia/nvidia-installer-disable-nouveau.conf"
+
+sudo cp $datei /etc/modprobe.d/nvidia-installer-disable-nouveau.conf
+
+sudo update-initramfs -u
+
+sudo systemctl set-default --runtime multi-user.target
+
+sudo reboot

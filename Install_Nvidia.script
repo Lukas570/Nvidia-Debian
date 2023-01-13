@@ -1,0 +1,15 @@
+#!/bin/bash
+
+sudo systemctl set-default graphical.target
+
+clear
+
+cd $HOME
+
+FILE=`ls |grep NVIDIA`
+
+sudo ./$FILE
+
+rm $FILE
+
+sudo reboot
